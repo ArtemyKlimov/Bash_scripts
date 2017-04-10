@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if test -f Makefile; then echo "Makefile already exists";
+exit
+fi
+
+files=$(ls *.cpp)
+echo "creating Makefile with found .cpp files: "$files
+
+STRING="CC = g++\nLFLAGS = -std=c++11\nCFLAGS = -c -g -Wall -Werror -Wextra\nEXECUTABLE_NAME = prog.out\nSOURCES = "
+STRING2="\n\nOBJECTS = \$(SOURCES:.cpp=.o)\n\nall: \$(EXECUTABLE_NAME)\n"
+STRING3="\n\$(EXECUTABLE_NAME): \$(OBJECTS)\n\t\$(CC) -o \$(EXECUTABLE_NAME) \$(OBJECTS)\n"
+STRING4="\n.cpp.o:\n\t\$(CC) \$(CFLAGS) \$(LFLAGS) \$< -o \$@\n"
+CLEAN_STRING="\nclean:\n\t\$(RM) *.o *~ \$(EXECUTABLE_NAME)"
+touch Makefile
+echo -e  $STRING$files$STRING2$STRING3$STRING4$CLEAN_STRING>>Makefile
+

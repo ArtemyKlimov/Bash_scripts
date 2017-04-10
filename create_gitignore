@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if test -f .gitignore; then echo ".gitignore already exists";
+exit
+fi
+
+PREREQUISITES="# Prerequisites\n*.d"
+OBJECT_FILES="\n# Compiled Object files\n*.slo\n*.lo\n*.o\n*.obj\n"
+PRECOMPILED_HEADERS="\n# Precompiled Headers\n*.gch\n*.pch\n"
+DYNAMIC_LIBRARIES="\n# Compiled Dynamic libraries\n*.so\n*.dylib\n*.dll\n"
+FORTRAN_FILES="\n# Fortran module files\n*.mod\n*.smod\n"
+STATIC_LIBRARIES="\n# Compiled Static libraries\n*.lai\n*.la\n*.a\n*.lib\n"
+EXECUTABLE="\n# Executable\n*.[]\n*.exe\n*.out\n*.app\n*"
+TEXT_FILES="\n# Text-files\n*.txt\n*.doc\n"
+VIM_FILES="\n# VIM-Files\n*.swp\n*.swo\n*.swn"
+touch .gitignore
+echo -e $PREREQUISITES$OBJECT_FILES$PRECOMPILED_HEADER$DYNAMIC_LIBRARIES$FORTRAN_FILES$STATIC_LIBRARIES$EXECUTABLE$TEXT_FILES$VIM_FILES>>.gitignore
+echo ".gitignore -file created"
