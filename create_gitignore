@@ -15,4 +15,4 @@ TEXT_FILES="\n# Text-files\n*.txt\n*.doc\n"
 VIM_FILES="\n# VIM-Files\n*.swp\n*.swo\n*.swn"
 touch .gitignore
 echo -e $PREREQUISITES$OBJECT_FILES$PRECOMPILED_HEADER$DYNAMIC_LIBRARIES$FORTRAN_FILES$STATIC_LIBRARIES$EXECUTABLE$TEXT_FILES$VIM_FILES>>.gitignore
-echo ".gitignore -file created"
+echo ".gitignore-file has been created"
