@@ -9,6 +9,6 @@
 creates Makefile in current directory. Includes all the .cpp files
 создает Makefile в текущей директории. Включает все исходники в проект.
 
-### create_gitignore
+#### create_gitignore
 creates hidden .gitignore-file in curren directory
 создает файл .gitignore в текущей директории
