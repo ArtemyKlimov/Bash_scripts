@@ -1,6 +1,7 @@
 ### usage/использование
 - chmode +x _filename_
 - just put these files inside /bin directory (probably root-privelege will be needed)
+
  положить файлы в папку /bin (могут потребоваться root права)
 
 ### Description/Описание
